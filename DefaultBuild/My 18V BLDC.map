@@ -1,0 +1,782 @@
+
+
+
+78K0R Linker W1.80                            Date: 2 Jun 2017 Page:   1
+
+Command:   -yC:\Program Files (x86)\Renesas Electronics\CS+\CACX\Device_
+           Custom\Devicefile -_msgoff -oDefaultBuild\My 18V BLDC.lmf -gi
+           00000000000000000000h -go84h,3E00h,512 -gb0F1FFF0H -mi0 -s -p
+           DefaultBuild\My 18V BLDC.map C:\Program Files (x86)\Renesas E
+           lectronics\CS+\CACX\CA78K0R\V1.72\lib78k0r\s0rll.rel DefaultB
+           uild\r_main.rel DefaultBuild\r_systeminit.rel DefaultBuild\r_
+           cg_cgc.rel DefaultBuild\r_cg_cgc_user.rel DefaultBuild\u_moto
+           r_driver.rel DefaultBuild\u_gvar.rel DefaultBuild\u_common_fu
+           nc.rel DefaultBuild\u_task_manage.rel DefaultBuild\u_led.rel 
+           DefaultBuild\u_button.rel DefaultBuild\r_cg_wdt.rel DefaultBu
+           ild\r_cg_wdt_user.rel DefaultBuild\u_PID.rel DefaultBuild\r_c
+           g_port.rel DefaultBuild\r_cg_port_user.rel DefaultBuild\r_cg_
+           intc.rel DefaultBuild\r_cg_intc_user.rel DefaultBuild\r_cg_ad
+           c.rel DefaultBuild\r_cg_adc_user.rel DefaultBuild\r_cg_timer.
+           rel DefaultBuild\r_cg_timer_user.rel DefaultBuild\r_cg_serial
+           .rel DefaultBuild\r_cg_serial_user.rel -bcl78m -bcl78mf -iC:\
+           Program Files (x86)\Renesas Electronics\CS+\CACX\CA78K0R\V1.7
+           2\lib78k0r
+Para-file:
+Out-file:  DefaultBuild\My 18V BLDC.lmf
+Map-file:  DefaultBuild\My 18V BLDC.map
+Direc-file:
+Directive:
+
+
+*** Link information ***
+
+    55 output segment(s)
+ 1BE8H byte(s) real data
+  1785 symbol(s) defined
+
+
+*** Memory map ***
+
+
+  SPACE=REGULAR
+
+  MEMORY=ROM
+  BASE ADDRESS=00000H   SIZE=04000H
+         OUTPUT   INPUT    INPUT      BASE      SIZE
+         SEGMENT  SEGMENT  MODULE     ADDRESS
+         @@VECT00                     00000H    00002H  CSEG AT
+                  @@VECT00 @cstart    00000H    00002H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  @cstart    00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_main     00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_systeminit
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_cgc   00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_cgc_user
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  u_motor_driver
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  u_gvar     00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  u_common_func
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  u_task_manage
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  u_led      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  u_button   00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_wdt   00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_wdt_user
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  u_PID      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_port
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_port_user
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_intc
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_intc_user
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_adc   00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_adc_user
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_timer
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_timer_user
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_serial
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_serial_user
+                                      00002H    00000H
+         @@RLINIT                     00002H    00000H  CSEG UNIT64KP
+                  @@RLINIT @cstart    00002H    00000H
+                  @@RLINIT r_main     00002H    00000H
+                  @@RLINIT r_systeminit
+                                      00002H    00000H
+                  @@RLINIT r_cg_cgc   00002H    00000H
+                  @@RLINIT r_cg_cgc_user
+                                      00002H    00000H
+                  @@RLINIT u_motor_driver
+                                      00002H    00000H
+                  @@RLINIT u_gvar     00002H    00000H
+                  @@RLINIT u_common_func
+                                      00002H    00000H
+                  @@RLINIT u_task_manage
+                                      00002H    00000H
+                  @@RLINIT u_led      00002H    00000H
+                  @@RLINIT u_button   00002H    00000H
+                  @@RLINIT r_cg_wdt   00002H    00000H
+                  @@RLINIT r_cg_wdt_user
+                                      00002H    00000H
+                  @@RLINIT u_PID      00002H    00000H
+                  @@RLINIT r_cg_port
+                                      00002H    00000H
+                  @@RLINIT r_cg_port_user
+                                      00002H    00000H
+                  @@RLINIT r_cg_intc
+                                      00002H    00000H
+                  @@RLINIT r_cg_intc_user
+                                      00002H    00000H
+                  @@RLINIT r_cg_adc   00002H    00000H
+                  @@RLINIT r_cg_adc_user
+                                      00002H    00000H
+                  @@RLINIT r_cg_timer
+                                      00002H    00000H
+                  @@RLINIT r_cg_timer_user
+                                      00002H    00000H
+                  @@RLINIT r_cg_serial
+                                      00002H    00000H
+                  @@RLINIT r_cg_serial_user
+                                      00002H    00000H
+                  @@RLINIT @rom       00002H    00000H
+         @@R_INIS                     00002H    00000H  CSEG UNIT64KP
+                  @@R_INIS @cstart    00002H    00000H
+                  @@R_INIS r_main     00002H    00000H
+                  @@R_INIS r_systeminit
+                                      00002H    00000H
+                  @@R_INIS r_cg_cgc   00002H    00000H
+                  @@R_INIS r_cg_cgc_user
+                                      00002H    00000H
+                  @@R_INIS u_motor_driver
+                                      00002H    00000H
+                  @@R_INIS u_gvar     00002H    00000H
+                  @@R_INIS u_common_func
+                                      00002H    00000H
+                  @@R_INIS u_task_manage
+                                      00002H    00000H
+                  @@R_INIS u_led      00002H    00000H
+                  @@R_INIS u_button   00002H    00000H
+                  @@R_INIS r_cg_wdt   00002H    00000H
+                  @@R_INIS r_cg_wdt_user
+                                      00002H    00000H
+                  @@R_INIS u_PID      00002H    00000H
+                  @@R_INIS r_cg_port
+                                      00002H    00000H
+                  @@R_INIS r_cg_port_user
+                                      00002H    00000H
+                  @@R_INIS r_cg_intc
+                                      00002H    00000H
+                  @@R_INIS r_cg_intc_user
+                                      00002H    00000H
+                  @@R_INIS r_cg_adc   00002H    00000H
+                  @@R_INIS r_cg_adc_user
+                                      00002H    00000H
+                  @@R_INIS r_cg_timer
+                                      00002H    00000H
+                  @@R_INIS r_cg_timer_user
+                                      00002H    00000H
+                  @@R_INIS r_cg_serial
+                                      00002H    00000H
+                  @@R_INIS r_cg_serial_user
+                                      00002H    00000H
+                  @@R_INIS @rom       00002H    00000H
+         @@CALT                       00002H    00000H  CSEG
+                  @@CALT   @cstart    00002H    00000H
+                  @@CALT   r_main     00002H    00000H
+                  @@CALT   r_systeminit
+                                      00002H    00000H
+                  @@CALT   r_cg_cgc   00002H    00000H
+                  @@CALT   r_cg_cgc_user
+                                      00002H    00000H
+                  @@CALT   u_motor_driver
+                                      00002H    00000H
+                  @@CALT   u_gvar     00002H    00000H
+                  @@CALT   u_common_func
+                                      00002H    00000H
+                  @@CALT   u_task_manage
+                                      00002H    00000H
+                  @@CALT   u_led      00002H    00000H
+                  @@CALT   u_button   00002H    00000H
+                  @@CALT   r_cg_wdt   00002H    00000H
+                  @@CALT   r_cg_wdt_user
+                                      00002H    00000H
+                  @@CALT   u_PID      00002H    00000H
+                  @@CALT   r_cg_port
+                                      00002H    00000H
+                  @@CALT   r_cg_port_user
+                                      00002H    00000H
+                  @@CALT   r_cg_intc
+                                      00002H    00000H
+                  @@CALT   r_cg_intc_user
+                                      00002H    00000H
+                  @@CALT   r_cg_adc   00002H    00000H
+                  @@CALT   r_cg_adc_user
+                                      00002H    00000H
+                  @@CALT   r_cg_timer
+                                      00002H    00000H
+                  @@CALT   r_cg_timer_user
+                                      00002H    00000H
+                  @@CALT   r_cg_serial
+                                      00002H    00000H
+                  @@CALT   r_cg_serial_user
+                                      00002H    00000H
+         ??NMIROM                     00002H    00002H  CSEG
+         @@VECT04                     00004H    00002H  CSEG AT
+                  @@VECT04 r_cg_wdt_user
+                                      00004H    00002H
+* gap *                               00006H    00004H
+         @@VECT0A                     0000AH    00006H  CSEG AT
+                  @@VECT0A r_cg_intc_user
+                                      0000AH    00006H
+* gap *                               00010H    00014H
+         @@VECT24                     00024H    00004H  CSEG AT
+                  @@VECT24 r_cg_serial_user
+                                      00024H    00004H
+* gap *                               00028H    00004H
+         @@VECT2C                     0002CH    00002H  CSEG AT
+                  @@VECT2C r_cg_timer_user
+                                      0002CH    00002H
+* gap *                               0002EH    00012H
+         @@VECT40                     00040H    00002H  CSEG AT
+                  @@VECT40 r_cg_timer_user
+                                      00040H    00002H
+         @@R_INIT                     00042H    00036H  CSEG UNIT64KP
+                  @@R_INIT @cstart    00042H    00000H
+                  @@R_INIT r_main     00042H    00002H
+                  @@R_INIT r_systeminit
+                                      00044H    00000H
+                  @@R_INIT r_cg_cgc   00044H    00000H
+                  @@R_INIT r_cg_cgc_user
+                                      00044H    00000H
+                  @@R_INIT u_motor_driver
+                                      00044H    00008H
+                  @@R_INIT u_gvar     0004CH    00000H
+                  @@R_INIT u_common_func
+                                      0004CH    00000H
+                  @@R_INIT u_task_manage
+                                      0004CH    00026H
+                  @@R_INIT u_led      00072H    00002H
+                  @@R_INIT u_button   00074H    00000H
+                  @@R_INIT r_cg_wdt   00074H    00000H
+                  @@R_INIT r_cg_wdt_user
+                                      00074H    00000H
+                  @@R_INIT u_PID      00074H    00000H
+                  @@R_INIT r_cg_port
+                                      00074H    00000H
+                  @@R_INIT r_cg_port_user
+                                      00074H    00000H
+                  @@R_INIT r_cg_intc
+                                      00074H    00000H
+                  @@R_INIT r_cg_intc_user
+                                      00074H    00004H
+                  @@R_INIT r_cg_adc   00078H    00000H
+                  @@R_INIT r_cg_adc_user
+                                      00078H    00000H
+                  @@R_INIT r_cg_timer
+                                      00078H    00000H
+                  @@R_INIT r_cg_timer_user
+                                      00078H    00000H
+                  @@R_INIT r_cg_serial
+                                      00078H    00000H
+                  @@R_INIT r_cg_serial_user
+                                      00078H    00000H
+                  @@R_INIT @rom       00078H    00000H
+* gap *                               00078H    00048H
+         ?CSEGOB0                     000C0H    00004H  CSEG OPT_BYTE
+         @@CODE                       000C4H    00000H  CSEG BASE
+                  @@CODE   r_main     000C4H    00000H
+                  @@CODE   r_systeminit
+                                      000C4H    00000H
+                  @@CODE   r_cg_cgc   000C4H    00000H
+                  @@CODE   r_cg_cgc_user
+                                      000C4H    00000H
+                  @@CODE   u_motor_driver
+                                      000C4H    00000H
+                  @@CODE   u_gvar     000C4H    00000H
+                  @@CODE   u_common_func
+                                      000C4H    00000H
+                  @@CODE   u_task_manage
+                                      000C4H    00000H
+                  @@CODE   u_led      000C4H    00000H
+                  @@CODE   u_button   000C4H    00000H
+                  @@CODE   r_cg_wdt   000C4H    00000H
+                  @@CODE   r_cg_wdt_user
+                                      000C4H    00000H
+                  @@CODE   u_PID      000C4H    00000H
+                  @@CODE   r_cg_port
+                                      000C4H    00000H
+                  @@CODE   r_cg_port_user
+                                      000C4H    00000H
+                  @@CODE   r_cg_intc
+                                      000C4H    00000H
+                  @@CODE   r_cg_intc_user
+                                      000C4H    00000H
+                  @@CODE   r_cg_adc   000C4H    00000H
+                  @@CODE   r_cg_adc_user
+                                      000C4H    00000H
+                  @@CODE   r_cg_timer
+                                      000C4H    00000H
+                  @@CODE   r_cg_timer_user
+                                      000C4H    00000H
+                  @@CODE   r_cg_serial
+                                      000C4H    00000H
+                  @@CODE   r_cg_serial_user
+                                      000C4H    00000H
+         ?CSEGSI                      000C4H    0000AH  CSEG
+         ?OCDSTAD                     000CEH    0000AH  CSEG
+         @@LCODE                      000D8H    00697H  CSEG BASE
+                  @@LCODE  @cstart    000D8H    000ADH
+                  @@LCODE  @ladd      00185H    0000FH
+                  @@LCODE  @lsub      00194H    00012H
+                  @@LCODE  @lursh     001A6H    0001FH
+                  @@LCODE  @lband     001C5H    00014H
+                  @@LCODE  m_fadd     001D9H    0013AH
+                  @@LCODE  m_fcom1    00313H    000CFH
+                  @@LCODE  m_fcom5    003E2H    0002AH
+                  @@LCODE  m_fcom6    0040CH    0001FH
+                  @@LCODE  m_fmul     0042BH    00113H
+                  @@LCODE  m_fdiv     0053EH    0012BH
+                  @@LCODE  m_ftols    00669H    00078H
+                  @@LCODE  m_ftolu    006E1H    0002BH
+                  @@LCODE  m_lstof    0070CH    00016H
+                  @@LCODE  m_lutof    00722H    0004DH
+         @@BASE                       0076FH    002ABH  CSEG BASE
+                  @@BASE   r_main     0076FH    00000H
+                  @@BASE   r_systeminit
+                                      0076FH    00000H
+                  @@BASE   r_cg_cgc   0076FH    00000H
+                  @@BASE   r_cg_cgc_user
+                                      0076FH    00000H
+                  @@BASE   u_motor_driver
+                                      0076FH    00000H
+                  @@BASE   u_gvar     0076FH    00000H
+                  @@BASE   u_common_func
+                                      0076FH    00000H
+                  @@BASE   u_task_manage
+                                      0076FH    00000H
+                  @@BASE   u_led      0076FH    00000H
+                  @@BASE   u_button   0076FH    00000H
+                  @@BASE   r_cg_wdt   0076FH    00000H
+                  @@BASE   r_cg_wdt_user
+                                      0076FH    00002H
+                  @@BASE   u_PID      00771H    00000H
+                  @@BASE   r_cg_port
+                                      00771H    00000H
+                  @@BASE   r_cg_port_user
+                                      00771H    00000H
+                  @@BASE   r_cg_intc
+                                      00771H    00000H
+                  @@BASE   r_cg_intc_user
+                                      00771H    00190H
+                  @@BASE   r_cg_adc   00901H    00000H
+                  @@BASE   r_cg_adc_user
+                                      00901H    00000H
+                  @@BASE   r_cg_timer
+                                      00901H    00000H
+                  @@BASE   r_cg_timer_user
+                                      00901H    00042H
+                  @@BASE   r_cg_serial
+                                      00943H    00000H
+                  @@BASE   r_cg_serial_user
+                                      00943H    000D7H
+         @@CNSTL                      00A1AH    000CEH  CSEG PAGE64KP
+                  @@CNSTL  m_fcom5    00A1AH    000CEH
+         @@LCODEL                     00AE8H    00060H  CSEG
+                  @@LCODEL @stkinit   00AE8H    00044H
+                  @@LCODEL exit       00B2CH    0001CH
+* gap *                               00B48H    002B8H
+         @@CNST                       00E00H    0003CH  CSEG MIRRORP
+                  @@CNST   @cstart    00E00H    00000H
+                  @@CNST   r_main     00E00H    0000CH
+                  @@CNST   r_systeminit
+                                      00E0CH    00000H
+                  @@CNST   r_cg_cgc   00E0CH    00000H
+                  @@CNST   r_cg_cgc_user
+                                      00E0CH    00000H
+                  @@CNST   u_motor_driver
+                                      00E0CH    00030H
+                  @@CNST   u_gvar     00E3CH    00000H
+                  @@CNST   u_common_func
+                                      00E3CH    00000H
+                  @@CNST   u_task_manage
+                                      00E3CH    00000H
+                  @@CNST   u_led      00E3CH    00000H
+                  @@CNST   u_button   00E3CH    00000H
+                  @@CNST   r_cg_wdt   00E3CH    00000H
+                  @@CNST   r_cg_wdt_user
+                                      00E3CH    00000H
+                  @@CNST   u_PID      00E3CH    00000H
+                  @@CNST   r_cg_port
+                                      00E3CH    00000H
+                  @@CNST   r_cg_port_user
+                                      00E3CH    00000H
+                  @@CNST   r_cg_intc
+                                      00E3CH    00000H
+                  @@CNST   r_cg_intc_user
+                                      00E3CH    00000H
+                  @@CNST   r_cg_adc   00E3CH    00000H
+                  @@CNST   r_cg_adc_user
+                                      00E3CH    00000H
+                  @@CNST   r_cg_timer
+                                      00E3CH    00000H
+                  @@CNST   r_cg_timer_user
+                                      00E3CH    00000H
+                  @@CNST   r_cg_serial
+                                      00E3CH    00000H
+                  @@CNST   r_cg_serial_user
+                                      00E3CH    00000H
+         @@CODEL                      00E3CH    00EDAH  CSEG
+                  @@CODEL  r_main     00E3CH    0007CH
+                  @@CODEL  r_systeminit
+                                      00EB8H    0003AH
+                  @@CODEL  r_cg_cgc   00EF2H    00010H
+                  @@CODEL  r_cg_cgc_user
+                                      00F02H    0000CH
+                  @@CODEL  u_motor_driver
+                                      00F0EH    002D6H
+                  @@CODEL  u_gvar     011E4H    0003AH
+                  @@CODEL  u_common_func
+                                      0121EH    001AAH
+                  @@CODEL  u_task_manage
+                                      013C8H    002CCH
+                  @@CODEL  u_led      01694H    000A4H
+                  @@CODEL  u_button   01738H    0000FH
+                  @@CODEL  r_cg_wdt   01747H    00014H
+                  @@CODEL  r_cg_wdt_user
+                                      0175BH    00000H
+                  @@CODEL  u_PID      0175BH    0013BH
+                  @@CODEL  r_cg_port
+                                      01896H    0000FH
+                  @@CODEL  r_cg_port_user
+                                      018A5H    00000H
+                  @@CODEL  r_cg_intc
+                                      018A5H    00079H
+                  @@CODEL  r_cg_intc_user
+                                      0191EH    00000H
+                  @@CODEL  r_cg_adc   0191EH    00056H
+                  @@CODEL  r_cg_adc_user
+                                      01974H    000BFH
+                  @@CODEL  r_cg_timer
+                                      01A33H    00188H
+                  @@CODEL  r_cg_timer_user
+                                      01BBBH    00000H
+                  @@CODEL  r_cg_serial
+                                      01BBBH    00149H
+                  @@CODEL  r_cg_serial_user
+                                      01D04H    00012H
+* gap *                               01D16H    020EAH
+         ??OCDROM                     03E00H    00200H  CSEG
+
+  MEMORY=RAM
+  BASE ADDRESS=FF900H   SIZE=00700H
+         OUTPUT   INPUT    INPUT      BASE      SIZE
+         SEGMENT  SEGMENT  MODULE     ADDRESS
+         @@DATA                       FF900H    00110H  DSEG BASEP
+                  @@DATA   @cstart    FF900H    000BAH
+                  @@DATA   r_main     FF9BAH    00000H
+                  @@DATA   r_systeminit
+                                      FF9BAH    00000H
+                  @@DATA   r_cg_cgc   FF9BAH    00000H
+                  @@DATA   r_cg_cgc_user
+                                      FF9BAH    00000H
+                  @@DATA   u_motor_driver
+                                      FF9BAH    00004H
+                  @@DATA   u_gvar     FF9BEH    0002CH
+                  @@DATA   u_common_func
+                                      FF9EAH    00000H
+                  @@DATA   u_task_manage
+                                      FF9EAH    00000H
+                  @@DATA   u_led      FF9EAH    00004H
+                  @@DATA   u_button   FF9EEH    00000H
+                  @@DATA   r_cg_wdt   FF9EEH    00000H
+                  @@DATA   r_cg_wdt_user
+                                      FF9EEH    00000H
+                  @@DATA   u_PID      FF9EEH    00018H
+                  @@DATA   r_cg_port
+                                      FFA06H    00000H
+                  @@DATA   r_cg_port_user
+                                      FFA06H    00000H
+                  @@DATA   r_cg_intc
+                                      FFA06H    00000H
+                  @@DATA   r_cg_intc_user
+                                      FFA06H    00000H
+                  @@DATA   r_cg_adc   FFA06H    00000H
+                  @@DATA   r_cg_adc_user
+                                      FFA06H    00000H
+                  @@DATA   r_cg_timer
+                                      FFA06H    00000H
+                  @@DATA   r_cg_timer_user
+                                      FFA06H    00000H
+                  @@DATA   r_cg_serial
+                                      FFA06H    0000AH
+                  @@DATA   r_cg_serial_user
+                                      FFA10H    00000H
+                  @@DATA   @rom       FFA10H    00000H
+         @@INIT                       FFA10H    00036H  DSEG BASEP
+                  @@INIT   @cstart    FFA10H    00000H
+                  @@INIT   r_main     FFA10H    00002H
+                  @@INIT   r_systeminit
+                                      FFA12H    00000H
+                  @@INIT   r_cg_cgc   FFA12H    00000H
+                  @@INIT   r_cg_cgc_user
+                                      FFA12H    00000H
+                  @@INIT   u_motor_driver
+                                      FFA12H    00008H
+                  @@INIT   u_gvar     FFA1AH    00000H
+                  @@INIT   u_common_func
+                                      FFA1AH    00000H
+                  @@INIT   u_task_manage
+                                      FFA1AH    00026H
+                  @@INIT   u_led      FFA40H    00002H
+                  @@INIT   u_button   FFA42H    00000H
+                  @@INIT   r_cg_wdt   FFA42H    00000H
+                  @@INIT   r_cg_wdt_user
+                                      FFA42H    00000H
+                  @@INIT   u_PID      FFA42H    00000H
+                  @@INIT   r_cg_port
+                                      FFA42H    00000H
+                  @@INIT   r_cg_port_user
+                                      FFA42H    00000H
+                  @@INIT   r_cg_intc
+                                      FFA42H    00000H
+                  @@INIT   r_cg_intc_user
+                                      FFA42H    00004H
+                  @@INIT   r_cg_adc   FFA46H    00000H
+                  @@INIT   r_cg_adc_user
+                                      FFA46H    00000H
+                  @@INIT   r_cg_timer
+                                      FFA46H    00000H
+                  @@INIT   r_cg_timer_user
+                                      FFA46H    00000H
+                  @@INIT   r_cg_serial
+                                      FFA46H    00000H
+                  @@INIT   r_cg_serial_user
+                                      FFA46H    00000H
+                  @@INIT   @rom       FFA46H    00000H
+         @@INIS                       FFA46H    00000H  DSEG UNITP
+                  @@INIS   @cstart    FFA46H    00000H
+                  @@INIS   r_main     FFA46H    00000H
+                  @@INIS   r_systeminit
+                                      FFA46H    00000H
+                  @@INIS   r_cg_cgc   FFA46H    00000H
+                  @@INIS   r_cg_cgc_user
+                                      FFA46H    00000H
+                  @@INIS   u_motor_driver
+                                      FFA46H    00000H
+                  @@INIS   u_gvar     FFA46H    00000H
+                  @@INIS   u_common_func
+                                      FFA46H    00000H
+                  @@INIS   u_task_manage
+                                      FFA46H    00000H
+                  @@INIS   u_led      FFA46H    00000H
+                  @@INIS   u_button   FFA46H    00000H
+                  @@INIS   r_cg_wdt   FFA46H    00000H
+                  @@INIS   r_cg_wdt_user
+                                      FFA46H    00000H
+                  @@INIS   u_PID      FFA46H    00000H
+                  @@INIS   r_cg_port
+                                      FFA46H    00000H
+                  @@INIS   r_cg_port_user
+                                      FFA46H    00000H
+                  @@INIS   r_cg_intc
+                                      FFA46H    00000H
+                  @@INIS   r_cg_intc_user
+                                      FFA46H    00000H
+                  @@INIS   r_cg_adc   FFA46H    00000H
+                  @@INIS   r_cg_adc_user
+                                      FFA46H    00000H
+                  @@INIS   r_cg_timer
+                                      FFA46H    00000H
+                  @@INIS   r_cg_timer_user
+                                      FFA46H    00000H
+                  @@INIS   r_cg_serial
+                                      FFA46H    00000H
+                  @@INIS   r_cg_serial_user
+                                      FFA46H    00000H
+                  @@INIS   @rom       FFA46H    00000H
+         @@DATS                       FFA46H    00000H  DSEG UNITP
+                  @@DATS   @cstart    FFA46H    00000H
+                  @@DATS   r_main     FFA46H    00000H
+                  @@DATS   r_systeminit
+                                      FFA46H    00000H
+                  @@DATS   r_cg_cgc   FFA46H    00000H
+                  @@DATS   r_cg_cgc_user
+                                      FFA46H    00000H
+                  @@DATS   u_motor_driver
+                                      FFA46H    00000H
+                  @@DATS   u_gvar     FFA46H    00000H
+                  @@DATS   u_common_func
+                                      FFA46H    00000H
+                  @@DATS   u_task_manage
+                                      FFA46H    00000H
+                  @@DATS   u_led      FFA46H    00000H
+                  @@DATS   u_button   FFA46H    00000H
+                  @@DATS   r_cg_wdt   FFA46H    00000H
+                  @@DATS   r_cg_wdt_user
+                                      FFA46H    00000H
+                  @@DATS   u_PID      FFA46H    00000H
+                  @@DATS   r_cg_port
+                                      FFA46H    00000H
+                  @@DATS   r_cg_port_user
+                                      FFA46H    00000H
+                  @@DATS   r_cg_intc
+                                      FFA46H    00000H
+                  @@DATS   r_cg_intc_user
+                                      FFA46H    00000H
+                  @@DATS   r_cg_adc   FFA46H    00000H
+                  @@DATS   r_cg_adc_user
+                                      FFA46H    00000H
+                  @@DATS   r_cg_timer
+                                      FFA46H    00000H
+                  @@DATS   r_cg_timer_user
+                                      FFA46H    00000H
+                  @@DATS   r_cg_serial
+                                      FFA46H    00000H
+                  @@DATS   r_cg_serial_user
+                                      FFA46H    00000H
+                  @@DATS   @rom       FFA46H    00000H
+         @@INITL                      FFA46H    00000H  DSEG UNIT64KP
+                  @@INITL  @cstart    FFA46H    00000H
+                  @@INITL  r_main     FFA46H    00000H
+                  @@INITL  r_systeminit
+                                      FFA46H    00000H
+                  @@INITL  r_cg_cgc   FFA46H    00000H
+                  @@INITL  r_cg_cgc_user
+                                      FFA46H    00000H
+                  @@INITL  u_motor_driver
+                                      FFA46H    00000H
+                  @@INITL  u_gvar     FFA46H    00000H
+                  @@INITL  u_common_func
+                                      FFA46H    00000H
+                  @@INITL  u_task_manage
+                                      FFA46H    00000H
+                  @@INITL  u_led      FFA46H    00000H
+                  @@INITL  u_button   FFA46H    00000H
+                  @@INITL  r_cg_wdt   FFA46H    00000H
+                  @@INITL  r_cg_wdt_user
+                                      FFA46H    00000H
+                  @@INITL  u_PID      FFA46H    00000H
+                  @@INITL  r_cg_port
+                                      FFA46H    00000H
+                  @@INITL  r_cg_port_user
+                                      FFA46H    00000H
+                  @@INITL  r_cg_intc
+                                      FFA46H    00000H
+                  @@INITL  r_cg_intc_user
+                                      FFA46H    00000H
+                  @@INITL  r_cg_adc   FFA46H    00000H
+                  @@INITL  r_cg_adc_user
+                                      FFA46H    00000H
+                  @@INITL  r_cg_timer
+                                      FFA46H    00000H
+                  @@INITL  r_cg_timer_user
+                                      FFA46H    00000H
+                  @@INITL  r_cg_serial
+                                      FFA46H    00000H
+                  @@INITL  r_cg_serial_user
+                                      FFA46H    00000H
+                  @@INITL  @rom       FFA46H    00000H
+         @@DATAL                      FFA46H    00000H  DSEG UNIT64KP
+                  @@DATAL  @cstart    FFA46H    00000H
+                  @@DATAL  r_main     FFA46H    00000H
+                  @@DATAL  r_systeminit
+                                      FFA46H    00000H
+                  @@DATAL  r_cg_cgc   FFA46H    00000H
+                  @@DATAL  r_cg_cgc_user
+                                      FFA46H    00000H
+                  @@DATAL  u_motor_driver
+                                      FFA46H    00000H
+                  @@DATAL  u_gvar     FFA46H    00000H
+                  @@DATAL  u_common_func
+                                      FFA46H    00000H
+                  @@DATAL  u_task_manage
+                                      FFA46H    00000H
+                  @@DATAL  u_led      FFA46H    00000H
+                  @@DATAL  u_button   FFA46H    00000H
+                  @@DATAL  r_cg_wdt   FFA46H    00000H
+                  @@DATAL  r_cg_wdt_user
+                                      FFA46H    00000H
+                  @@DATAL  u_PID      FFA46H    00000H
+                  @@DATAL  r_cg_port
+                                      FFA46H    00000H
+                  @@DATAL  r_cg_port_user
+                                      FFA46H    00000H
+                  @@DATAL  r_cg_intc
+                                      FFA46H    00000H
+                  @@DATAL  r_cg_intc_user
+                                      FFA46H    00000H
+                  @@DATAL  r_cg_adc   FFA46H    00000H
+                  @@DATAL  r_cg_adc_user
+                                      FFA46H    00000H
+                  @@DATAL  r_cg_timer
+                                      FFA46H    00000H
+                  @@DATAL  r_cg_timer_user
+                                      FFA46H    00000H
+                  @@DATAL  r_cg_serial
+                                      FFA46H    00000H
+                  @@DATAL  r_cg_serial_user
+                                      FFA46H    00000H
+                  @@DATAL  @rom       FFA46H    00000H
+         @@BITS                       FFA46H    00000H  BSEG
+                  @@BITS   @cstart    FFA46H.0  00000H.0
+                  @@BITS   r_main     FFA46H.0  00000H.0
+                  @@BITS   r_systeminit
+                                      FFA46H.0  00000H.0
+                  @@BITS   r_cg_cgc   FFA46H.0  00000H.0
+                  @@BITS   r_cg_cgc_user
+                                      FFA46H.0  00000H.0
+                  @@BITS   u_motor_driver
+                                      FFA46H.0  00000H.0
+                  @@BITS   u_gvar     FFA46H.0  00000H.0
+                  @@BITS   u_common_func
+                                      FFA46H.0  00000H.0
+                  @@BITS   u_task_manage
+                                      FFA46H.0  00000H.0
+                  @@BITS   u_led      FFA46H.0  00000H.0
+                  @@BITS   u_button   FFA46H.0  00000H.0
+                  @@BITS   r_cg_wdt   FFA46H.0  00000H.0
+                  @@BITS   r_cg_wdt_user
+                                      FFA46H.0  00000H.0
+                  @@BITS   u_PID      FFA46H.0  00000H.0
+                  @@BITS   r_cg_port
+                                      FFA46H.0  00000H.0
+                  @@BITS   r_cg_port_user
+                                      FFA46H.0  00000H.0
+                  @@BITS   r_cg_intc
+                                      FFA46H.0  00000H.0
+                  @@BITS   r_cg_intc_user
+                                      FFA46H.0  00000H.0
+                  @@BITS   r_cg_adc   FFA46H.0  00000H.0
+                  @@BITS   r_cg_adc_user
+                                      FFA46H.0  00000H.0
+                  @@BITS   r_cg_timer
+                                      FFA46H.0  00000H.0
+                  @@BITS   r_cg_timer_user
+                                      FFA46H.0  00000H.0
+                  @@BITS   r_cg_serial
+                                      FFA46H.0  00000H.0
+                  @@BITS   r_cg_serial_user
+                                      FFA46H.0  00000H.0
+* gap *                               FFA46H    0048EH
+         @@SEGREG                     FFED4H    00004H  DSEG AT
+                  @@SEGREG @SEGREG    FFED4H    00004H
+         @@RTARG0                     FFED8H    00008H  DSEG AT
+                  @@RTARG0 @RTARG0    FFED8H    00008H
+* gap *                               FFEE0H    00020H
+* gap (Not Free Area) *               FFF00H    00100H
+
+
+ Target chip : R7F0C009B
+ Device file : E1.00c
+
