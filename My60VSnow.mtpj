@@ -368,6 +368,22 @@
       <ParentItem>48a9eb13-be7b-4a7b-ad17-5b5239e441cd</ParentItem>
       <Property>f5824ee9-00a1-4739-ac9a-7f3113ac7853</Property>
     </Instance>
+    <Instance Guid="5a999a68-7324-4a60-a8d9-56872ffccf1d">
+      <Name>u_flash_operate.c</Name>
+      <Type>File</Type>
+      <RelativePath>u_flash_operate.c</RelativePath>
+      <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
+      <ParentItem>48a9eb13-be7b-4a7b-ad17-5b5239e441cd</ParentItem>
+      <Property>85f5d4b0-c704-46aa-a162-03679fb0bdd4</Property>
+    </Instance>
+    <Instance Guid="1f592a68-29cc-49d4-a423-62e3f5bc0194">
+      <Name>u_flash_operate.h</Name>
+      <Type>File</Type>
+      <RelativePath>u_flash_operate.h</RelativePath>
+      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
+      <ParentItem>48a9eb13-be7b-4a7b-ad17-5b5239e441cd</ParentItem>
+      <Property>8ac44cbd-c36d-46c8-988e-e897b7ec4bad</Property>
+    </Instance>
   </Class>
   <Class Guid="fb98844b-2c27-4275-9804-f6e63e204da0">
     <Instance Guid="fb98844b-2c27-4275-9804-f6e63e204da0">
@@ -468,6 +484,12 @@
     <Instance Guid="f5824ee9-00a1-4739-ac9a-7f3113ac7853">
       <MemoCount>0</MemoCount>
     </Instance>
+    <Instance Guid="85f5d4b0-c704-46aa-a162-03679fb0bdd4">
+      <MemoCount>0</MemoCount>
+    </Instance>
+    <Instance Guid="8ac44cbd-c36d-46c8-988e-e897b7ec4bad">
+      <MemoCount>0</MemoCount>
+    </Instance>
   </Class>
   <Class Guid="78a5c5cd-76cb-4bcc-a031-3020011fbc9a">
     <Instance Guid="b17b92ac-9e14-4618-a2cf-28db14a1237d">
@@ -563,7 +585,9 @@
       <SourceItemType21>LibrarySource</SourceItemType21>
       <SourceItemGuid22>dfd7c7ce-f767-4f0c-b5ac-c658c2031004</SourceItemGuid22>
       <SourceItemType22>LinkDirectiveSource</SourceItemType22>
-      <SourceItemCount>23</SourceItemCount>
+      <SourceItemGuid23>5a999a68-7324-4a60-a8d9-56872ffccf1d</SourceItemGuid23>
+      <SourceItemType23>CSource</SourceItemType23>
+      <SourceItemCount>24</SourceItemCount>
       <VfiSourceItemCount>0</VfiSourceItemCount>
       <LastDeviceChangedCounter>61</LastDeviceChangedCounter>
     </Instance>
@@ -1168,6 +1192,14 @@ cl78mf
       <ItemAddTime>636322772030233783</ItemAddTime>
       <ItemAddTimeCount>4</ItemAddTimeCount>
     </Instance>
+    <Instance Guid="5a999a68-7324-4a60-a8d9-56872ffccf1d">
+      <ItemAddTime>636322973105194300</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="1f592a68-29cc-49d4-a423-62e3f5bc0194">
+      <ItemAddTime>636322973455462528</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
     <Instance Guid="fc999d8f-43d6-4cb3-af4b-cf6891d759fb">
       <TimeTagModified-SourceItem0--0>-8587107683022205238</TimeTagModified-SourceItem0--0>
       <SourceItem0-IsLockedByUser>False</SourceItem0-IsLockedByUser>
@@ -1253,6 +1285,10 @@ cl78mf
       <SourceItem20-IsLockedByUser>False</SourceItem20-IsLockedByUser>
       <SourceItem20-BuildingTarget-0>True</SourceItem20-BuildingTarget-0>
       <SourceItem20-IndividualCompileOption-0>False</SourceItem20-IndividualCompileOption-0>
+      <TimeTagModified-SourceItem23--0>-8587049351749581508</TimeTagModified-SourceItem23--0>
+      <SourceItem23-IsLockedByUser>False</SourceItem23-IsLockedByUser>
+      <SourceItem23-BuildingTarget-0>True</SourceItem23-BuildingTarget-0>
+      <SourceItem23-IndividualCompileOption-0>False</SourceItem23-IndividualCompileOption-0>
     </Instance>
     <Instance Guid="e4582a76-90da-4988-9864-24db24826845">
       <TimeTagModified-SourceItem21--0>-8587049552824542025</TimeTagModified-SourceItem21--0>

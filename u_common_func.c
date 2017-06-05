@@ -44,15 +44,15 @@ uint32_t Calc_AverageCalculate_32Bit(uint32_t *TableEntry,uint8_t len)
 	}
 
 	if(2 == len)
-		return ((uint16_t)(temp>>1));
+		return ((uint32_t)(temp>>1));
 	else if(4 == len)
-		return ((uint16_t)(temp>>2));
+		return ((uint32_t)(temp>>2));
 	else if(8 == len)
-		return ((uint16_t)(temp>>3));
+		return ((uint32_t)(temp>>3));
 	else if(16 == len)
-		return ((uint16_t)(temp>>4));
+		return ((uint32_t)(temp>>4));
 	else 
-		return (uint16_t)(temp/len);
+		return (uint32_t)(temp/len);
 }
 
 

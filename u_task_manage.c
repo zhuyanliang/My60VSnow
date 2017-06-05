@@ -204,8 +204,10 @@ void Task_Motor_SpeedControl(void)
 		g_speedPWM = SPEED_MIN;
 		if(Check_Motor_Stop())
 		{
+			uint8_t i;
 			g_realSpeed = 0;
-			g_dltSpeedTick = (~(uint32_t)0x00);
+			for(i=0;i<DLTSPEEDTICKNUM;i++)
+				g_dltSpeedTick[i] = (~(uint32_t)0x00);
 		}
 		return;
 	}
@@ -291,8 +293,10 @@ void Task_Manage_ProtectInfo(void)
  */
 void Task_Calc_Speed(void)
 {
+	uint8_t i;
 	static uint16_t speedSum = 0;
 	static uint8_t cnt = 0;
+	uint32_t dltSpeedTick = 0;
 
 	cnt++;
 	if(MOTOR_STOP == g_motorState)
@@ -305,7 +309,10 @@ void Task_Calc_Speed(void)
 		g_realSpeed = speedSum/SPEEDAVGNUM;
 		speedSum = 0;
 	}
-	speedSum += (uint16_t)(60000000/g_dltSpeedTick/MAGNEDTIC_POLE_NUM);
+
+	dltSpeedTick = Calc_AverageCalculate_32Bit(g_dltSpeedTick,DLTSPEEDTICKNUM);
+	
+	speedSum += (uint16_t)(60000000/dltSpeedTick/MAGNEDTIC_POLE_NUM);
 	
 }
 

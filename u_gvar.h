@@ -77,7 +77,7 @@ extern volatile uint16_t	g_realSpeed;
 extern uint16_t				g_setSpeed;
 extern volatile int16_t 	g_constCurrent;
 
-extern volatile uint32_t	g_dltSpeedTick;
+extern volatile uint32_t	g_dltSpeedTick[8];
 
 extern uint32_t				g_protectDelay;
 

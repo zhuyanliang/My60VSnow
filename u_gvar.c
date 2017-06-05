@@ -48,7 +48,8 @@ uint16_t 		g_motorCurrent;
 bool 					g_motorDirection;
 
 bool 					g_motorStopFlag;
-volatile uint32_t		g_dltSpeedTick;
+volatile uint32_t		g_dltSpeedTick[8];
+
 volatile int16_t		g_speedPWM;
 volatile uint16_t		g_realSpeed;
 uint16_t				g_setSpeed;
@@ -62,6 +63,7 @@ uint32_t	g_protectDelay;
 
 void Global_Var_Init(void)
 {
+	uint8_t i;
 	g_voltLow 		= Voltage_Low_Value_AD;
 	g_curShort 		= Current_Short_AD;
 	g_curOvLeve1 	= Current_OverLeve1_AD;
@@ -78,10 +80,13 @@ void Global_Var_Init(void)
 	g_motorDirection = true;
 	g_elapse2Ms = true;
 
-	g_dltSpeedTick = (~0x00);
+	for(i=0;i<DLTSPEEDTICKNUM;i++)
+		g_dltSpeedTick[i] = (~0x00);
+	
 	g_setSpeed = SPEED_EXPECT;
 
 	g_protectDelay = (~0x00);
 	g_constCurrent = Current(10);
+	
 }
 

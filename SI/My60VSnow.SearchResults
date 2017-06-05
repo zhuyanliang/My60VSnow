@@ -1,10 +1,5 @@
----- g_btnPress Matches (9 in 5 files) ----
-U_button.c:			g_btnPress = true;
-U_button.c:		g_btnPress = false;
-U_gvar.c:bool 			g_btnPress;	
-U_gvar.c:	g_btnPress = false;
-U_gvar.h:extern bool 			g_btnPress;
-U_motor_driver.c:	if(!g_btnPress)
-U_motor_driver.c:	if(g_btnPress)
-U_task_manage.c:	if(!g_btnPress)
-U_task_manage.c:		if(g_btnPress)
+---- hdwinit Matches (5 in 3 files) ----
+Function.html:<tr><td bgColor=#CCFFCC><FONT face=Arial size=2></FONT></td><td bgColor=#CCFFCC><FONT face=Arial size=2> </FONT></td><td bgColor=#CCFFCC><FONT face=Arial size=2> </FONT></td><td bgColor=#CCFFCC><FONT face=Arial size=2> void hdwinit(void)</FONT></td><td bgColor=#CCFFCC><FONT face=Arial size=2> hdwinit</FONT></td><td bgColor=#CCFFCC><FONT face=Arial size=2> Used</FONT></td></tr>
+R_main.c:	hdwinit();
+R_systeminit.c:* Function Name: hdwinit
+R_systeminit.c:void hdwinit(void)

@@ -17,13 +17,24 @@ void PID_Init(void)
 
 int16_t PID_Control(void)
 {
-	int32_t iError = 0;
+	int16_t iError = 0;
 	float inncPid = 0.0;
 	s_pid.setSpeed = g_setSpeed;
 	s_pid.realSpeed = g_realSpeed;
 	
 	iError = s_pid.setSpeed - s_pid.realSpeed;
 	iError *= 10;
+
+	if(iError > 5000)
+	{
+		s_pid.Kp = 0.002;
+    	s_pid.Ki = 0.0005;
+	}
+	else
+	{
+		s_pid.Kp = 0.001;
+    	s_pid.Ki = 0.0002;
+	}
 
 	inncPid = (float)(s_pid.Kp*(iError - s_pid.errLast));
 	inncPid += (float)(s_pid.Ki*iError);

@@ -14,7 +14,7 @@
 
 #define MAGNEDTIC_POLE_NUM 		4U
 #define SPEEDAVGNUM				4U
-
+#define DLTSPEEDTICKNUM			8U
 
 #define VDD			5U
 #define AVREF		VDD

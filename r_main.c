@@ -57,6 +57,7 @@ Global variables and functions
 
 /* End user code. Do not edit comment generated here */
 void R_MAIN_UserInit(void);
+extern hdwinit();
 
 /***********************************************************************************************************************
 * Function Name: main
@@ -121,7 +122,6 @@ void R_MAIN_UserInit(void)
 {
     /* Start user code. Do not edit comment generated here */
 	hdwinit();
-
 	R_TAU0_Channel0_Start();	/* system tick */
 	R_TMR_RJ0_Start();			/* speed check timer start*/
 	Global_Var_Init();

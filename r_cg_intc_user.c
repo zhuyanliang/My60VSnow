@@ -63,6 +63,7 @@ __interrupt static void r_intc1_interrupt(void)
     /* for calculate motor speed r/min */
     /* timer intval is 1/3 uS */
  	static uint8_t  index = 0x00;
+	uint32_t dltSpeed = (~0x00);
 #define _20Ms (_EA5F_TMRJ_TRJ0_VALUE+1)
 	static uint16_t lastTick = 0;
 	uint16_t current = 0;	
@@ -70,22 +71,23 @@ __interrupt static void r_intc1_interrupt(void)
 	current = TRJ0;
 	if(current > lastTick)
 	{
-		g_dltSpeedTick = _20Ms + lastTick - current; 
-		g_dltSpeedTick /= 3U;
+		dltSpeed = _20Ms + lastTick - current; 
+		dltSpeed /= 3U;
 		if(g_elapse20MsCnt > 1U)
 		{
-			g_dltSpeedTick += ((g_elapse20MsCnt-1)*20000U);
+			dltSpeed += ((g_elapse20MsCnt-1)*20000U);
 		}
 	}
 	else
 	{
-		g_dltSpeedTick = lastTick - current; 
-		g_dltSpeedTick /= 3U;
+		dltSpeed = lastTick - current; 
+		dltSpeed /= 3U;
 		if(0 != g_elapse20MsCnt)
 		{
-			g_dltSpeedTick += g_elapse20MsCnt*20000U;
+			dltSpeed += g_elapse20MsCnt*20000U;
 		}
 	}
+	g_dltSpeedTick[index++&0x7] = dltSpeed;
 	
 	g_elapse20MsCnt = 0;
 	lastTick = TRJ0;
