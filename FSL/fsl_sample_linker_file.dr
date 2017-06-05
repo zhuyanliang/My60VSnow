@@ -1,0 +1,39 @@
+;=================================================================================================
+; Project      = Flash self-programming library, MF3 single voltage flash
+; Module       = fsl.inc
+; Device:      = RL78/G13 (R5F100LE)
+; Version      = V2.20
+;=================================================================================================
+;                                  COPYRIGHT
+;=================================================================================================
+; Copyright(c) 2010,2011,2012 Renesas Electronics Corporation
+;=================================================================================================
+; Purpose:
+;                Linker sample file, please modify according to your device
+;
+;=================================================================================================
+;
+; RENESAS ELECTRONICS CONFIDENTIAL AND PROPRIETARY.
+; This program must be used solely for the purpose for which it was furnished
+; by Renesas Electronics Corporation. No part of this program may be reproduced or
+; disclosed to others, in any form, without the prior written permission of
+; Renesas Electronics Corporation.
+;
+;=================================================================================================
+
+;MEMORY ROM   : ( 000000H , 003800H )        
+MEMORY ROM   : ( 000000H , 003400H )	
+MEMORY U_ROM : ( 003400H , 000400H )	
+
+; Placement for FSL in ROM
+MERGE FSL_FCD  : = U_ROM
+;MERGE FSL_FECD : = U_ROM
+MERGE FSL_BCD  : = U_ROM
+;MERGE FSL_BECD : = U_ROM
+
+MEMORY RAM : ( 0FFb80H , 002A0H )
+;MEMORY RAM : ( 0FFb80H , 0023bH )
+
+;MEMORY RAM_STACK : ( 0FFdbcH , 00064H )
+
+MEMORY RAM_SADDR : ( 0FFE20H , 001E0H )

@@ -9,30 +9,21 @@ void PID_Init(void)
     s_pid.errPre = 0;
     s_pid.errLast = 0;
     s_pid.integral = 0;
-	s_pid.Kp = 0.01;
-    s_pid.Ki = 0.002;
+	s_pid.Kp = 0.002;
+    s_pid.Ki = 0.0005;
     s_pid.Kd = 0;
 }
 
+
 int16_t PID_Control(void)
 {
-	int16_t iError;
+	int32_t iError = 0;
 	float inncPid = 0.0;
-	
 	s_pid.setSpeed = g_setSpeed;
 	s_pid.realSpeed = g_realSpeed;
 	
 	iError = s_pid.setSpeed - s_pid.realSpeed;
-	if(iError > 200)
-	{
-		s_pid.Kp = 0.01;
-		s_pid.Ki = 0.003;
-	}
-	else
-	{
-		s_pid.Kp = 0.01;
-		s_pid.Ki = 0.002;
-	}
+	iError *= 10;
 
 	inncPid = (float)(s_pid.Kp*(iError - s_pid.errLast));
 	inncPid += (float)(s_pid.Ki*iError);

@@ -269,11 +269,11 @@ void Task_Manage_ProtectInfo(void)
 		{
 			Led_Set(30,7,200);
 		}
-		if(g_sysProtect.ovCur || g_sysProtect.curshort)
+		if(g_sysProtect.ovCurLe1|| g_sysProtect.curshort)
 		{
 			Led_Set(30,6,200);
 		}
-		if(g_sysProtect.ovload)
+		if(g_sysProtect.ovCurLe1)
 		{
 			Led_Set(30,5,200);
 		}

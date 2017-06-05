@@ -3,9 +3,9 @@
 #define CONFIG_H
 
 // Only one can be true
-#define CONST_SPEED		false
+#define CONST_SPEED		true
 #define CONST_CURRENT	false
-#define OPEN_LOOP		true
+#define OPEN_LOOP		false
 
 
 #define SPEED_MAX		(int16_t)4799

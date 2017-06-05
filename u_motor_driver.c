@@ -233,7 +233,7 @@ void Manage_Motor_State(void)
 	{
 		if(0 == *((uint8_t*)&g_sysProtect))
 		{	
-			if(g_speedPWM < (g_setSpeed - 200U))
+			if(g_realSpeed < (g_setSpeed - 500U))
 			{
 				g_motorState = MOTOR_STARTUP;
 			}

@@ -62,7 +62,6 @@ __interrupt static void r_intc1_interrupt(void)
     /* Start user code. Do not edit comment generated here */
     /* for calculate motor speed r/min */
     /* timer intval is 1/3 uS */
- 	
  	static uint8_t  index = 0x00;
 #define _20Ms (_EA5F_TMRJ_TRJ0_VALUE+1)
 	static uint16_t lastTick = 0;
