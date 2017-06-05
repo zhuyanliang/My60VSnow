@@ -29,14 +29,18 @@
 #define Voltage_Low_Value_AD	(uint16_t)(Voltage_Low_Value*1.0F*Rbottom/(Rtop+Rbottom)/VDD*ADC10BITS)
 
 /*current check parameters*/
-#define R_curchk				0.001F
-#define Current_Short_Value		50U		/* uint: A*/
-#define Current_Overload_Value	30U		/* uint: A*/
-#define Amplifier				10U
-#define Current_Short_AD		(uint16_t)(Current_Short_Value*R_curchk/VDD*ADC10BITS*Amplifier)
-#define Current_Overload_AD		(uint16_t)(Current_Overload_Value*R_curchk/VDD*ADC10BITS*Amplifier)
+#define R_curchk					0.001F
+#define Amplifier					10U		/* 电流采样放大倍数*/
 /* x -- 单位: A*/
-#define Current(x)				(uint16_t)(x*R_curchk/VDD*ADC10BITS*Amplifier)
+#define Current(x)					(uint16_t)(x*R_curchk/VDD*ADC10BITS*Amplifier)
+
+/*单位: A*/
+#define Current_Short_AD			Current(110)
+#define Current_OverLeve1_AD		Current(20)
+#define Current_OverLeve2_AD		Current(40)
+#define Current_OverLeve3_AD		Current(60)
+#define Current_OverLeve4_AD		Current(80)
+
 
 /*mosfet temperature parameters*/
 #define R_div				10U
@@ -50,5 +54,6 @@
 
 #define Enable		true
 #define NeedBrake	Enable
+
 
 #endif

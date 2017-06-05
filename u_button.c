@@ -23,6 +23,8 @@ void Task_Btn_Scan(void)
 	{
 		cnt = 0;
 		g_btnPress = false;
+	 	/* 松开机器启动按钮后清除保护信息 */
+		g_protectDelay = (~0x00);
 	}
 }
 

@@ -320,6 +320,14 @@
       <ParentItem>48a9eb13-be7b-4a7b-ad17-5b5239e441cd</ParentItem>
       <Property>0027fc40-d733-4a85-9708-d368bd06ab9f</Property>
     </Instance>
+    <Instance Guid="edb67183-6c05-441f-aa94-4c9d0473fa3d">
+      <Name>u_define.h</Name>
+      <Type>File</Type>
+      <RelativePath>u_define.h</RelativePath>
+      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
+      <ParentItem>48a9eb13-be7b-4a7b-ad17-5b5239e441cd</ParentItem>
+      <Property>389486bf-9f4f-4f41-b38e-e86ad41b5b45</Property>
+    </Instance>
   </Class>
   <Class Guid="fb98844b-2c27-4275-9804-f6e63e204da0">
     <Instance Guid="fb98844b-2c27-4275-9804-f6e63e204da0">
@@ -400,6 +408,9 @@
       <MemoCount>0</MemoCount>
     </Instance>
     <Instance Guid="0027fc40-d733-4a85-9708-d368bd06ab9f">
+      <MemoCount>0</MemoCount>
+    </Instance>
+    <Instance Guid="389486bf-9f4f-4f41-b38e-e86ad41b5b45">
       <MemoCount>0</MemoCount>
     </Instance>
   </Class>
@@ -1071,6 +1082,10 @@ cl78mf
     <Instance Guid="0c4a6d6b-6cdb-498d-90a2-f8e1f502b787">
       <ItemAddTime>636310646758475341</ItemAddTime>
       <ItemAddTimeCount>2</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="edb67183-6c05-441f-aa94-4c9d0473fa3d">
+      <ItemAddTime>636322055847209426</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
     <Instance Guid="fc999d8f-43d6-4cb3-af4b-cf6891d759fb">
       <TimeTagModified-SourceItem0--0>-8587107683022205238</TimeTagModified-SourceItem0--0>

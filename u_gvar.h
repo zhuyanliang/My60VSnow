@@ -12,13 +12,15 @@ typedef enum
 typedef struct
 {
 	unsigned lowVolt	:1; 	/* voltage low */ 
-	unsigned ovCur		:1;		/* overcurrent */
+	unsigned ovCurLe1	:1;		/* overcurrent Level 1*/
+	unsigned ovCurLe2	:1;		/* overcurrent Level 2*/
+	unsigned ovCurLe3	:1;		/* overcurrent Level 3*/
+	unsigned ovCurLe4	:1;		/* overcurrent Level 4*/
+	unsigned curshort	:1;
 	unsigned comm 		:1;
 	unsigned mos_ovTemp :1;
-	unsigned ovload		:1;		/* overload*/
-	unsigned curshort	:1;
 	unsigned hallerr	:1;
-	unsigned 			:1;
+	unsigned 			:7;
 	
 }S_SYS_PROTECT;
 
@@ -64,8 +66,11 @@ extern bool 			g_motorStopFlag;
 
 extern uint16_t 		g_voltLow;
 extern uint16_t			g_curShort;
-extern uint16_t			g_curOvLoad;
 extern uint16_t			g_ovTemp;
+extern uint16_t 		g_curOvLeve1;
+extern uint16_t 		g_curOvLeve2;
+extern uint16_t 		g_curOvLeve3;
+extern uint16_t 		g_curOvLeve4;
 
 extern volatile int16_t		g_speedPWM;
 extern volatile uint16_t	g_realSpeed;
@@ -73,7 +78,8 @@ extern uint16_t				g_setSpeed;
 extern volatile int16_t 	g_constCurrent;
 
 extern volatile uint32_t	g_dltSpeedTick;
-extern uint32_t				g_justForTest;
+
+extern uint32_t				g_protectDelay;
 
 void Global_Var_Init(void);
 

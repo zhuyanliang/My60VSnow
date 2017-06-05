@@ -135,6 +135,9 @@ void Motor_Brake(void)
 	P1 |= 0x70;                 //set all low bridge pin high to brake,  
 }
 
+/*
+ * 首先获取霍尔状态，然后进行马达换相
+ */
 void Get_Hall_Commutate_Phase(void)
 {
 	g_hallState = Get_Hall_State();
@@ -281,11 +284,11 @@ void Const_Current(void)
 {
 	if(g_motorCurrent < g_constCurrent)
 	{
-		g_speedPWM += 1;
+		g_speedPWM += 2;
 	}
 	else
 	{
-		g_speedPWM -= 1;
+		g_speedPWM -= 2;
 	}
 }
 
@@ -293,7 +296,10 @@ void Open_Loop_Run(void)
 {
 	if(g_speedPWM < SPEED_MAX)
 	{
-		g_speedPWM++;	
+		if((SPEED_MAX - g_speedPWM)>500)
+			g_speedPWM += 3;
+		else
+			g_speedPWM ++;
 	}
 }
 

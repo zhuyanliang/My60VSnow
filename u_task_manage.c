@@ -1,5 +1,7 @@
 #include "u_include.h"
 
+static uint32_t lastProtectDelay = (~0x00);
+
 /*
  * execution cycle is 10Ms
  *
@@ -12,7 +14,7 @@ void Task_Voltage_Check(void)
 	static bool 	firstFlag = true;
 	static uint16_t voltArray[4] = {0};
 	static uint8_t  voltIndex = 0;
-	static uint8_t 	cnt = 0;
+
 	uint16_t volatge;
 
 	if(firstFlag)
@@ -32,14 +34,18 @@ void Task_Voltage_Check(void)
 
 	if(volatge < g_voltLow)
 	{
-		if(cnt++ > 3)
-			g_sysProtect.lowVolt = 0b1;
+		g_sysProtect.lowVolt = 0b1;
+		if(g_protectDelay > PROTECTDELAY_100Ms)
+		{
+			g_protectDelay = PROTECTDELAY_100Ms;
+		}
 	}
 	else
 	{
-		cnt = 0;
 		g_sysProtect.lowVolt = 0b0;
+		g_protectDelay = lastProtectDelay;
 	}
+	lastProtectDelay = g_protectDelay;
 }
 
 
@@ -55,6 +61,7 @@ void Task_Current_Check(void)
 	static bool firstFlag = true;
 	static uint16_t currentArray[4] = {0};
 	static uint8_t  currentIndex = 0;
+	
 	if(firstFlag)
 	{
 		firstFlag = false;
@@ -73,15 +80,79 @@ void Task_Current_Check(void)
 		currentArray[currentIndex++ & 0x03] = ADC_Convert_Original(Adc_Channel_Current);
 		g_motorCurrent = Calc_AverageCalculate(currentArray,4);
 	}
-	
-	if(g_motorCurrent > g_curOvLoad)
+
+	/* Check if over current*/
+	if(g_motorCurrent > g_curOvLeve1)
 	{
-		g_sysProtect.ovload = 0b1;
+		g_sysProtect.ovCurLe1 = 0b1;
+		if(g_protectDelay > PROTECTDELAY_3S)
+		{
+			g_protectDelay = PROTECTDELAY_3S;
+		}
 	}
 	else
 	{
-		g_sysProtect.ovload = 0b0;
+		g_sysProtect.ovCurLe1 = 0b0;
+		g_protectDelay = lastProtectDelay;
 	}
+
+	if(g_motorCurrent > g_curOvLeve2)
+	{
+		g_sysProtect.ovCurLe2 = 0b1;
+		if(g_protectDelay > PROTECTDELAY_600Ms)
+		{
+			g_protectDelay = PROTECTDELAY_600Ms;
+		}
+	}
+	else
+	{
+		g_sysProtect.ovCurLe2 = 0b0;
+		g_protectDelay = lastProtectDelay;
+	}
+
+	if(g_motorCurrent > g_curOvLeve3)
+	{
+		g_sysProtect.ovCurLe3 = 0b1;
+		if(g_protectDelay > PROTECTDELAY_100Ms)
+		{
+			g_protectDelay = PROTECTDELAY_100Ms;
+		}
+	}
+	else
+	{
+		g_sysProtect.ovCurLe3 = 0b0;
+		g_protectDelay = lastProtectDelay;
+	}
+
+	if(g_motorCurrent > g_curOvLeve4)
+	{
+		g_sysProtect.ovCurLe4 = 0b1;
+		if(g_protectDelay > PROTECTDELAY_20Ms)
+		{
+			g_protectDelay = PROTECTDELAY_20Ms;
+		}
+	}
+	else
+	{
+		g_sysProtect.ovCurLe4 = 0b0;
+		g_protectDelay = lastProtectDelay;
+	}
+	
+	if(g_motorCurrent > g_curShort)
+	{
+		g_sysProtect.curshort = 0b1;
+		if(g_protectDelay > PROTECTDELAY_10Ms)
+		{
+			g_protectDelay = PROTECTDELAY_10Ms;
+		}
+	}
+	else
+	{
+		g_sysProtect.curshort = 0b0;
+		g_protectDelay = lastProtectDelay;
+	}
+
+	lastProtectDelay = g_protectDelay;
 }
 
 void Task_Temperature_Check(void)
@@ -175,6 +246,13 @@ void Task_Delay(void)
 void Task_Manage_ProtectInfo(void)
 {
 	uint8_t protectInfo =  *(uint8_t*)&g_sysProtect;
+
+	g_protectDelay -= 2;
+	if(!g_protectDelay)
+	{
+		g_protectDelay = 2;
+		Motor_Stop();
+	}
 	
 	/* LED always on  */
 	if(0 == protectInfo)

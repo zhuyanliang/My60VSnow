@@ -16,6 +16,7 @@
 #include "u_common_func.h"
 #include "u_task_manage.h"
 #include "u_PID.h"
+#include "u_define.h"
 
 
 #endif

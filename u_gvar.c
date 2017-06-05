@@ -25,7 +25,10 @@ uint8_t			g_hallState;
 
 uint16_t 		g_voltLow;
 uint16_t		g_curShort;
-uint16_t		g_curOvLoad;
+uint16_t 		g_curOvLeve1;
+uint16_t 		g_curOvLeve2;
+uint16_t 		g_curOvLeve3;
+uint16_t 		g_curOvLeve4;
 uint16_t		g_ovTemp;
 
 
@@ -53,17 +56,19 @@ uint8_t					g_elapse20MsCnt;
 /* 设定恒流值 */
 volatile int16_t 		g_constCurrent;
 
-
-/*just for test system tick*/
-uint32_t	g_justForTest; 
+/* 保护时间 Ms*/
+uint32_t	g_protectDelay; 
 
 
 void Global_Var_Init(void)
 {
-	g_voltLow 	= Voltage_Low_Value_AD;
-	g_curShort 	= Current_Short_AD;
-	g_curOvLoad = Current_Overload_AD;
-	g_ovTemp	= Temp_Over_AD;
+	g_voltLow 		= Voltage_Low_Value_AD;
+	g_curShort 		= Current_Short_AD;
+	g_curOvLeve1 	= Current_OverLeve1_AD;
+	g_curOvLeve2 	= Current_OverLeve2_AD;
+	g_curOvLeve3 	= Current_OverLeve3_AD;
+	g_curOvLeve4 	= Current_OverLeve4_AD;
+	g_ovTemp		= Temp_Over_AD;
 
 	g_speedPWM = SPEED_MIN;
 	g_motorStopFlag = true;
@@ -73,9 +78,10 @@ void Global_Var_Init(void)
 	g_motorDirection = true;
 	g_elapse2Ms = true;
 
-	g_dltSpeedTick = 0xFFFFFFFF;
+	g_dltSpeedTick = (~0x00);
 	g_setSpeed = SPEED_EXPECT;
 
+	g_protectDelay = (~0x00);
 	g_constCurrent = Current(10);
 }
 

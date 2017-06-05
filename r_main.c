@@ -83,9 +83,7 @@ void main(void)
 			g_elapse2Ms = false;
 
 			Task_Calc_Speed();
-			
 			Task_Manage_ProtectInfo();
-			
 			R_WDT_Restart();
 
 			switch(tskList++)
