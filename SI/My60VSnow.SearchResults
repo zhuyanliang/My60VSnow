@@ -1,5 +1,0 @@
----- g_curOvLoad Matches (4 in 3 files) ----
-U_gvar.c:uint16_t		g_curOvLoad;
-U_gvar.c:	g_curOvLoad = Current_Overload_AD;
-U_gvar.h:extern uint16_t			g_curOvLoad;
-U_task_manage.c:	if(g_motorCurrent > g_curOvLoad)
