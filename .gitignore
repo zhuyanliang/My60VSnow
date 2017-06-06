@@ -66,6 +66,8 @@
 *.PS
 *.SearchResults
 *WK3
+*.PFI
+
 
 
 # Debug files
@@ -73,7 +75,7 @@
 *.su
 
 #Renesas
-*.mtdu
+*.mtud
 *.mtpj
 *.hex
 *.lmf
